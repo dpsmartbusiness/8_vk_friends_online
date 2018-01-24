@@ -21,9 +21,9 @@ def get_online_friends(login, password):
         scope='friends'
     )
     api = vk.API(session)
-    friends_online = api.friends.getOnline()
+    friends_ids = api.friends.getOnline()
     friends_full_name = api.users.get(
-        user_ids=friends_online,
+        user_ids=friends_ids,
         fields='first_name, last_name'
     )
     return friends_full_name
